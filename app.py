@@ -84,10 +84,10 @@ if st.button("Predict 🕵️"):
         st.session_state["last_label"] = label
 
         if label.lower() == "spam":
-            st.markdown(f"<h2 style='color: red;'>⚠️ Prediction: {label} ({y_prob*100:.2f}% confidence)</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='color: red;'>⚠️ Prediction: {label} </h2>", unsafe_allow_html=True)
             st.balloons()
         else:
-            st.markdown(f"<h2 style='color: green;'>✅ Prediction: {label} ({(1-y_prob)*100:.2f}% confidence)</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='color: green;'>✅ Prediction: {label} </h2>", unsafe_allow_html=True)
     else:
         st.warning("Please enter some text to classify!")
 
@@ -119,9 +119,11 @@ if "last_text" in st.session_state and "last_label" in st.session_state:
 # -----------------------------
 # Footer
 # -----------------------------
-st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray;'>Made with ❤️ using Streamlit & XGBoost</p>", unsafe_allow_html=True)
-
+st.markdown("""
+---
+👨‍💻 *Developed by Md Faizal Nadeem*  
+🚀 *Made with ❤️ using TF-IDF & XGBoost*
+""")
 
 
 
